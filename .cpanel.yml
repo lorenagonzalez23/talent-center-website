@@ -1,0 +1,13 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=$HOME/public_html
+    - /bin/mkdir -p $DEPLOYPATH/css
+    - /bin/mkdir -p $DEPLOYPATH/js
+    - /bin/cp index.html $DEPLOYPATH/index.html
+    - /bin/cp clases.html $DEPLOYPATH/clases.html
+    - /bin/cp eventos.html $DEPLOYPATH/eventos.html
+    - /bin/cp nosotros.html $DEPLOYPATH/nosotros.html
+    - /bin/cp contacto.html $DEPLOYPATH/contacto.html
+    - /bin/cp css/styles.css $DEPLOYPATH/css/styles.css
+    - /bin/cp js/main.js $DEPLOYPATH/js/main.js
