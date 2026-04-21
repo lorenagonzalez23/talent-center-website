@@ -267,17 +267,25 @@ section { position: relative; }
 .navbar__hamburger {
   display: none;
   flex-direction: column;
-  gap: 5px;
-  width: 32px;
+  justify-content: center;
+  gap: 6px;
+  width: 44px;
+  height: 44px;
   cursor: pointer;
-  padding: 4px;
+  padding: 10px;
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+  z-index: 1001;
+  position: relative;
 }
 .navbar__hamburger span {
   display: block;
+  width: 100%;
   height: 2px;
   background: var(--white);
   border-radius: 2px;
   transition: all 0.3s ease;
+  transform-origin: center;
 }
 
 /* Mobile menu */
@@ -288,32 +296,32 @@ section { position: relative; }
   background: rgba(10,10,10,0.98);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  z-index: 999;
+  z-index: 1002;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  padding: 40px;
+  gap: 4px;
+  padding: 80px 40px 40px;
 }
 .navbar__mobile-menu.open { display: flex; }
 .navbar__mobile-menu a {
   font-family: var(--font-headline);
-  font-size: 40px;
+  font-size: clamp(28px, 7vw, 40px);
   font-weight: 800;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--white);
-  padding: 12px 24px;
+  padding: 10px 24px;
   transition: color 0.3s ease;
   text-align: center;
 }
 .navbar__mobile-menu a:hover, .navbar__mobile-menu a.active { color: var(--orange); }
-.navbar__mobile-menu .btn { margin-top: 20px; }
+.navbar__mobile-menu .btn { margin-top: 16px; font-size: 16px; padding: 14px 32px; }
 .navbar__mobile-close {
   position: absolute;
-  top: 24px;
-  right: 24px;
-  font-size: 32px;
+  top: 20px;
+  right: 20px;
+  font-size: 22px;
   color: var(--white);
   cursor: pointer;
   width: 44px;
@@ -324,6 +332,8 @@ section { position: relative; }
   border-radius: var(--radius-sm);
   background: rgba(255,255,255,0.08);
   transition: background 0.2s ease;
+  z-index: 1003;
+  flex-shrink: 0;
 }
 .navbar__mobile-close:hover { background: rgba(255,255,255,0.15); }
 
@@ -1509,9 +1519,15 @@ section { position: relative; }
   .steps-grid::before { display: none; }
 }
 
-/* ---- Navbar logo mobile ---- */
+/* ---- Navbar logo responsive ---- */
 @media (max-width: 1024px) {
-  .navbar__logo img { height: 160px; }
+  .navbar__logo img { height: 100px; }
+}
+@media (max-width: 768px) {
+  .navbar__logo img { height: 72px; }
+}
+@media (max-width: 480px) {
+  .navbar__logo img { height: 56px; }
 }
 
 /* ---- 768px Mobile ---- */
